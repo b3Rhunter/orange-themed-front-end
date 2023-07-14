@@ -1,0 +1,209 @@
+:root {
+--text: #ff7b00;
+--background: #160e04;
+--primary: #ff7b00;
+--secondary: #1a0f04;
+--accent: #ff7b00;
+
+--shadow-color: 30deg 100% 0%;
+--shadow-elevation-low:
+0.2px 0.2px 0.3px hsl(var(--shadow-color) / 0.34),
+0.4px 0.4px 0.6px -1.2px hsl(var(--shadow-color) / 0.34),
+0.9px 0.9px 1.4px -2.5px hsl(var(--shadow-color) / 0.34);
+--shadow-elevation-medium:
+0.2px 0.2px 0.3px hsl(var(--shadow-color) / 0.36),
+0.7px 0.7px 1.1px -0.8px hsl(var(--shadow-color) / 0.36),
+1.9px 1.8px 2.9px -1.7px hsl(var(--shadow-color) / 0.36),
+4.5px 4.5px 7.2px -2.5px hsl(var(--shadow-color) / 0.36);
+--shadow-elevation-high:
+  0.2px 0.2px 0.3px hsl(var(--shadow-color) / 0.34),
+  1.3px 1.3px 2.1px -0.4px hsl(var(--shadow-color) / 0.34),
+  2.5px 2.4px 3.9px -0.7px hsl(var(--shadow-color) / 0.34),
+  4px 4px 6.4px -1.1px hsl(var(--shadow-color) / 0.34),
+  6.4px 6.4px 10.2px -1.4px hsl(var(--shadow-color) / 0.34),
+  10.1px 10px 16px -1.8px hsl(var(--shadow-color) / 0.34),
+  15.3px 15.2px 24.3px -2.1px hsl(var(--shadow-color) / 0.34),
+  22.6px 22.4px 35.8px -2.5px hsl(var(--shadow-color) / 0.34);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App {
+  text-align: center;
+  background-color: var(--background);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: var(--text);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 75px;
+  width: 100%;
+
+  padding: 1em;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+
+  height: 350px;
+  width: 350px;
+
+  border: 1px solid var(--accent);
+  border-radius: 1em;
+  background-color: var(--secondary);
+  box-shadow: var(--shadow-elevation-high);
+}
+
+.card input {
+  padding: 1em;
+
+  width: 250px;
+
+  outline: none;
+  border: 1px solid var(--accent);
+  border-radius: 1em;
+
+  text-align: center;
+  color: var(--text);
+
+  background-color: var(--background);
+  box-shadow: var(--shadow-elevation-high);
+}
+
+.card button {
+  width: 250px;
+  padding: 1em;
+
+  outline: none;
+  border: 1px solid var(--accent);
+  border-radius: 1em;
+  color: var(--text);
+
+  font-family: Rubik;
+  font-weight: 800;
+
+  background-color: var(--background);
+  box-shadow: var(--shadow-elevation-high);
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  background-color: var(--accent);
+  color: var(--secondary);
+  box-shadow: var(--shadow-elevation-high);
+  transform: translateY(-4px);
+}
+
+.card button:active {
+  background-color: var(--background);
+  box-shadow: var(--shadow-elevation-medium);
+  color: var(--text);
+  transform: translateY(4px);
+}
+
+header button {
+  padding: 0.5em 1em;
+
+  min-width: 13ch;
+  min-height: 33px;
+
+  outline: none;
+  border: 1px solid var(--accent);
+  border-radius: 50em;
+  color: var(--text);
+
+  font-family: Rubik;
+  font-weight: 800;
+
+  background-color: var(--background);
+  box-shadow: var(--shadow-elevation-high);
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+header button:hover {
+  background-color: var(--accent);
+  color: var(--secondary);
+  box-shadow: var(--shadow-elevation-high);
+  transform: translateY(-4px);
+}
+
+header button:active {
+  background-color: var(--background);
+  box-shadow: var(--shadow-elevation-medium);
+  color: var(--text);
+  transform: translateY(4px);
+}
+
+.info {
+  border: 1px solid var(--primary);
+  border-radius: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5em;
+  padding: 1em;
+
+  height: 150px;
+  width: 250px;
+
+  font-size: 0.85em;
+  font-family: Roboto Mono;
+  font-weight: 200;
+
+  box-shadow: var(--shadow-elevation-high);
+}
+
+.logo {
+  font-size: 2em;
+  color: var(--accent);
+}
+
+@font-face {
+  font-family: Roboto Mono;
+  src: url(./Fonts/RobotoMono-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url(./Fonts/Rubik-VariableFont_wght.ttf);
+}
